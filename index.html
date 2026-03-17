@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AryanzUtama Services</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#0f0f0f;
+color:white;
+text-align:center;
+}
+
+/* banner */
+
+.banner{
+position:relative;
+}
+
+.banner img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+/* icon jb */
+
+.logo{
+position:absolute;
+bottom:-40px;
+left:50%;
+transform:translateX(-50%);
+}
+
+.logo img{
+width:80px;
+height:80px;
+border-radius:50%;
+border:4px solid #0f0f0f;
+}
+
+/* container */
+
+.container{
+padding-top:60px;
+width:90%;
+margin:auto;
+}
+
+/* grid jasa */
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+margin-top:20px;
+}
+
+.card{
+background:#1c1c1c;
+padding:15px;
+border-radius:10px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.card:hover{
+background:#292929;
+}
+
+/* full card */
+
+.full-card{
+background:#1c1c1c;
+padding:15px;
+border-radius:10px;
+margin-top:12px;
+cursor:pointer;
+}
+
+/* kritik kecil */
+
+.small-card{
+background:#1c1c1c;
+padding:10px;
+border-radius:8px;
+margin-top:12px;
+font-size:14px;
+cursor:pointer;
+}
+
+/* popup */
+
+.popup{
+display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:#1b1b1b;
+padding:20px;
+width:85%;
+max-width:400px;
+border-radius:12px;
+z-index:10;
+}
+
+.popup textarea, .popup input{
+width:100%;
+margin-top:8px;
+padding:8px;
+border:none;
+border-radius:6px;
+}
+
+.popup button{
+margin-top:10px;
+padding:10px;
+border:none;
+background:#00ff99;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* overlay */
+
+.overlay{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+z-index:5;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="banner">
+<img src="https://res.cloudinary.com/dtdodhqqi/image/upload/v1766772767/IMG-20251128-WA0091_ldbe9l.jpg">
+
+<div class="logo">
+<img src="https://res.cloudinary.com/dtdodhqqi/image/upload/v1766845910/IMG-20251128-WA0094_1_rrrhdn.jpg">
+</div>
+</div>
+
+<div class="container">
+
+<div class="grid">
+
+<div class="card">Jual Akun FF</div>
+<div class="card">Jual Akun ML</div>
+
+<div class="card">Jasa Amanin Akun FF</div>
+<div class="card">Jasa Amanin Akun ML</div>
+
+</div>
+
+<div class="full-card" onclick="openPopup('jp')">
+Jasa Posting (JP)
+</div>
+
+<div class="full-card" onclick="openPopup('group')">
+Semua Grup / Saluran AryanzUtama
+</div>
+
+<div class="small-card" onclick="openPopup('kritik')">
+Kritik & Saran
+</div>
+
+</div>
+
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+
+<!-- popup jp -->
+
+<div class="popup" id="jp">
+<h3>Jasa Post (JP)</h3>
+
+<input placeholder="Nama">
+
+<input placeholder="No WA">
+
+<textarea placeholder="Isi format JP"></textarea>
+
+<button>Kirim</button>
+
+</div>
+
+<!-- popup grup -->
+
+<div class="popup" id="group">
+<h3>Grup / Saluran AryanzUtama</h3>
+
+<p>Link akan ditaruh di sini</p>
+
+</div>
+
+<!-- popup kritik -->
+
+<div class="popup" id="kritik">
+<h3>Kritik & Saran</h3>
+
+<textarea placeholder="Tulis kritik atau saran"></textarea>
+
+<button>Kirim</button>
+
+</div>
+
+<script>
+
+function openPopup(id){
+document.getElementById(id).style.display='block'
+document.getElementById('overlay').style.display='block'
+}
+
+function closePopup(){
+let popups=document.querySelectorAll('.popup')
+popups.forEach(p=>p.style.display='none')
+document.getElementById('overlay').style.display='none'
+}
+
+</script>
+
+</body>
+</html>
