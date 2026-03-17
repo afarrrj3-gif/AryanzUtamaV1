@@ -3,14 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AryanzUtama Services</title>
+
+<title>AryanzUtama</title>
 
 <style>
 
 body{
 margin:0;
-font-family:Arial, sans-serif;
-background:#0f0f0f;
+font-family:Arial;
+background:linear-gradient(180deg,#071a2f,#0b3c70);
 color:white;
 text-align:center;
 }
@@ -23,24 +24,34 @@ position:relative;
 
 .banner img{
 width:100%;
-height:220px;
+height:230px;
 object-fit:cover;
 }
 
-/* icon jb */
+/* icon tengah */
 
 .logo{
 position:absolute;
-bottom:-40px;
+bottom:-45px;
 left:50%;
 transform:translateX(-50%);
+animation:float 3s ease-in-out infinite;
 }
 
 .logo img{
-width:80px;
-height:80px;
+width:90px;
+height:90px;
 border-radius:50%;
-border:4px solid #0f0f0f;
+border:4px solid #00bfff;
+box-shadow:0 0 20px #00bfff;
+}
+
+/* animasi */
+
+@keyframes float{
+0%{transform:translate(-50%,0)}
+50%{transform:translate(-50%,-6px)}
+100%{transform:translate(-50%,0)}
 }
 
 /* container */
@@ -51,45 +62,84 @@ width:90%;
 margin:auto;
 }
 
-/* grid jasa */
+/* nama */
+
+.name{
+font-size:24px;
+font-weight:bold;
+margin-top:10px;
+text-shadow:0 0 10px #00bfff;
+}
+
+/* sosmed */
+
+.social{
+margin-top:8px;
+}
+
+.social img{
+width:26px;
+margin:0 6px;
+filter:grayscale(1) brightness(2);
+cursor:pointer;
+transition:0.3s;
+}
+
+.social img:hover{
+transform:scale(1.2);
+}
+
+/* grid */
 
 .grid{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:12px;
-margin-top:20px;
+margin-top:25px;
 }
 
 .card{
-background:#1c1c1c;
-padding:15px;
+background:rgba(255,255,255,0.05);
+padding:14px;
 border-radius:10px;
-cursor:pointer;
 font-weight:bold;
+cursor:pointer;
+border:1px solid rgba(0,191,255,0.4);
+transition:0.3s;
 }
 
 .card:hover{
-background:#292929;
+background:#00bfff;
+color:black;
+transform:translateY(-4px);
 }
 
-/* full card */
+/* card panjang */
 
 .full-card{
-background:#1c1c1c;
-padding:15px;
+background:rgba(255,255,255,0.05);
+padding:14px;
 border-radius:10px;
 margin-top:12px;
 cursor:pointer;
+border:1px solid rgba(0,191,255,0.4);
+transition:0.3s;
 }
 
-/* kritik kecil */
+.full-card:hover{
+background:#00bfff;
+color:black;
+}
+
+/* kecil */
 
 .small-card{
-background:#1c1c1c;
+background:rgba(255,255,255,0.05);
 padding:10px;
 border-radius:8px;
 margin-top:12px;
 font-size:14px;
+border:1px solid rgba(0,191,255,0.4);
 cursor:pointer;
 }
 
@@ -101,7 +151,7 @@ position:fixed;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
-background:#1b1b1b;
+background:#0a2a4a;
 padding:20px;
 width:85%;
 max-width:400px;
@@ -109,7 +159,7 @@ border-radius:12px;
 z-index:10;
 }
 
-.popup textarea, .popup input{
+.popup textarea,.popup input{
 width:100%;
 margin-top:8px;
 padding:8px;
@@ -121,7 +171,7 @@ border-radius:6px;
 margin-top:10px;
 padding:10px;
 border:none;
-background:#00ff99;
+background:#00bfff;
 border-radius:6px;
 cursor:pointer;
 }
@@ -145,87 +195,71 @@ z-index:5;
 <body>
 
 <div class="banner">
+
 <img src="https://res.cloudinary.com/dtdodhqqi/image/upload/v1766772767/IMG-20251128-WA0091_ldbe9l.jpg">
 
 <div class="logo">
 <img src="https://res.cloudinary.com/dtdodhqqi/image/upload/v1766845910/IMG-20251128-WA0094_1_rrrhdn.jpg">
 </div>
+
 </div>
 
 <div class="container">
 
+<div class="name">AryanzUtama</div>
+
+<div class="social">
+
+<a href="https://www.instagram.com/aryanz_stok?igsh=MW80bzZpOHRtcjBmbA==" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+</a>
+
+<a href="https://wa.me/6289509506039" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+</a>
+
+</div>
+
 <div class="grid">
 
-<div class="card">Jual Akun FF</div>
-<div class="card">Jual Akun ML</div>
+<div class="card" onclick="openPopup()">Jual Akun FF</div>
+<div class="card" onclick="openPopup()">Jual Akun ML</div>
 
-<div class="card">Jasa Amanin Akun FF</div>
-<div class="card">Jasa Amanin Akun ML</div>
+<div class="card" onclick="openPopup()">Jasa Amanin Akun FF</div>
+<div class="card" onclick="openPopup()">Jasa Amanin Akun ML</div>
 
 </div>
 
-<div class="full-card" onclick="openPopup('jp')">
-Jasa Posting (JP)
-</div>
+<div class="full-card" onclick="openPopup()">Jasa Posting (JP)</div>
 
-<div class="full-card" onclick="openPopup('group')">
-Semua Grup / Saluran AryanzUtama
-</div>
+<div class="full-card" onclick="openPopup()">Grup / Saluran AryanzUtama</div>
 
-<div class="small-card" onclick="openPopup('kritik')">
-Kritik & Saran
-</div>
+<div class="small-card" onclick="openPopup()">Kritik & Saran</div>
 
 </div>
 
 <div class="overlay" id="overlay" onclick="closePopup()"></div>
 
-<!-- popup jp -->
+<div class="popup" id="popup">
 
-<div class="popup" id="jp">
-<h3>Jasa Post (JP)</h3>
+<h3>Layanan</h3>
 
-<input placeholder="Nama">
+<p>Isi popup nanti kita buat khusus untuk layanan ini.</p>
 
-<input placeholder="No WA">
-
-<textarea placeholder="Isi format JP"></textarea>
-
-<button>Kirim</button>
-
-</div>
-
-<!-- popup grup -->
-
-<div class="popup" id="group">
-<h3>Grup / Saluran AryanzUtama</h3>
-
-<p>Link akan ditaruh di sini</p>
-
-</div>
-
-<!-- popup kritik -->
-
-<div class="popup" id="kritik">
-<h3>Kritik & Saran</h3>
-
-<textarea placeholder="Tulis kritik atau saran"></textarea>
-
-<button>Kirim</button>
+<button onclick="closePopup()">Tutup</button>
 
 </div>
 
 <script>
 
-function openPopup(id){
-document.getElementById(id).style.display='block'
-document.getElementById('overlay').style.display='block'
+function openPopup(){
+document.getElementById("popup").style.display="block"
+document.getElementById("overlay").style.display="block"
 }
 
 function closePopup(){
-let popups=document.querySelectorAll('.popup')
-popups.forEach(p=>p.style.display='none')
-document.getElementById('overlay').style.display='none'
+document.getElementById("popup").style.display="none"
+document.getElementById("overlay").style.display="none"
 }
 
 </script>
