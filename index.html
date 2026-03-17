@@ -13,15 +13,15 @@ font-family:Arial;
 color:white;
 text-align:center;
 
-/* background garis tipis seperti banner */
+/* garis tipis kecil seperti banner */
 
-background:
-repeating-linear-gradient(
+background-color:#0b2f55;
+background-image:repeating-linear-gradient(
 135deg,
-#0c2f55,
-#0c2f55 20px,
-#0c2f55 21px,
-#ffffff22 22px
+rgba(255,255,255,0.15) 0px,
+rgba(255,255,255,0.15) 1px,
+transparent 1px,
+transparent 16px
 );
 }
 
@@ -37,26 +37,26 @@ height:220px;
 object-fit:cover;
 }
 
-/* icon */
+/* icon tengah */
 
 .logo{
 position:absolute;
 left:50%;
-bottom:-45px;
+bottom:-42px;
 transform:translateX(-50%);
 }
 
 .logo img{
-width:90px;
-height:90px;
+width:88px;
+height:88px;
 border-radius:50%;
-border:4px solid #0c2f55;
+border:4px solid #0b2f55;
 }
 
 /* container */
 
 .container{
-padding-top:55px;
+padding-top:52px;
 width:90%;
 margin:auto;
 }
@@ -66,19 +66,19 @@ margin:auto;
 .name{
 font-size:22px;
 font-weight:bold;
-margin-top:4px;
+margin-top:2px;
+margin-bottom:2px;
 }
 
 /* sosmed */
 
 .social{
-margin-top:2px;
-margin-bottom:15px;
+margin-bottom:12px;
 }
 
 .social img{
 width:26px;
-margin:0 6px;
+margin:0 5px;
 filter:grayscale(100%);
 cursor:pointer;
 }
@@ -89,7 +89,7 @@ cursor:pointer;
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:12px;
-margin-top:10px;
+margin-top:8px;
 }
 
 .card{
@@ -100,7 +100,7 @@ font-weight:bold;
 cursor:pointer;
 }
 
-/* full card */
+/* full */
 
 .full-card{
 background:#153e6b;
@@ -110,7 +110,7 @@ margin-top:12px;
 cursor:pointer;
 }
 
-/* small */
+/* kecil */
 
 .small-card{
 background:#153e6b;
@@ -153,8 +153,6 @@ background:#1f6fb5;
 border-radius:6px;
 cursor:pointer;
 }
-
-/* overlay */
 
 .overlay{
 display:none;
@@ -221,7 +219,7 @@ z-index:5;
 <div class="popup" id="popup">
 
 <h3>Layanan</h3>
-<p>Isi popup nanti kita buat khusus untuk layanan ini.</p>
+<p>Isi popup tetap seperti versi sebelumnya.</p>
 
 <button onclick="closePopup()">Tutup</button>
 
