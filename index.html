@@ -3,260 +3,261 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>AryanzUtama</title>
 
 <style>
 
-body{
+*{
 margin:0;
-font-family:Arial, sans-serif;
-color:white;
-text-align:center;
-
-background-image:url("https://res.cloudinary.com/dtdodhqqi/image/upload/v1773940915/a0c855f3c5b538ff083075f066e578ae_bjtdfa.jpg");
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
+padding:0;
+box-sizing:border-box;
+font-family:sans-serif;
 }
 
-/* banner */
+body{
+background:url("https://res.cloudinary.com/dtdodhqqi/image/upload/v1773940915/a0c855f3c5b538ff083075f066e578ae_bjtdfa.jpg");
+background-size:cover;
+background-attachment:fixed;
+color:white;
+}
+
+/* BANNER */
 
 .banner{
 position:relative;
+width:100%;
 }
 
 .banner img{
 width:100%;
-height:220px;
-object-fit:cover;
 display:block;
 }
 
-/* fade banner ke background */
+/* FADE HALUS */
 
 .fade{
-position:absolute;
-bottom:-60px;
-left:0;
-width:100%;
 height:120px;
-pointer-events:none;
-
 background:linear-gradient(
 to bottom,
-rgba(0,0,0,0) 0%,
-rgba(0,0,0,0.35) 40%,
-rgba(0,0,0,0.6) 70%,
-rgba(0,0,0,0.85) 100%
+rgba(0,0,0,0),
+rgba(0,0,0,0.45),
+rgba(0,0,0,0.7)
 );
+margin-top:-5px;
 }
 
-/* logo */
+/* PROFILE */
 
-.logo{
-position:absolute;
-left:50%;
-bottom:-45px;
-transform:translateX(-50%);
-z-index:3;
+.profile{
+text-align:center;
+margin-top:-70px;
+position:relative;
+z-index:5;
 }
 
-.logo img{
-width:88px;
-height:88px;
+.profile img{
+width:120px;
+height:120px;
 border-radius:50%;
-border:4px solid white;
+border:6px solid white;
 }
 
-/* container */
+/* TITLE */
 
-.container{
-padding-top:60px;
-width:90%;
+.title{
+margin-top:8px;
+font-size:26px;
+font-weight:700;
+}
+
+/* SOCIAL */
+
+.social{
+margin-top:4px;
+display:flex;
+justify-content:center;
+gap:12px;
+}
+
+.social a{
+font-size:26px;
+color:white;
+text-decoration:none;
+}
+
+/* BUTTON AREA */
+
+.menu{
+padding:20px;
+max-width:500px;
 margin:auto;
 }
 
-/* nama */
-
-.name{
-font-size:22px;
-font-weight:bold;
-margin-top:-4px;
-margin-bottom:6px;
+.row{
+display:flex;
+gap:15px;
+margin-bottom:15px;
 }
 
-/* sosial */
-
-.social{
-margin-bottom:14px;
+.row a{
+flex:1;
 }
 
-.social img{
-width:26px;
-margin:0 6px;
-filter:grayscale(100%);
-cursor:pointer;
-}
-
-/* grid */
-
-.grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:12px;
-margin-top:10px;
-}
-
-/* card style */
-
-.card,
-.full-card,
-.small-card{
-
-background:rgba(21,62,107,0.92);
-padding:14px;
-border-radius:12px;
-
-font-weight:bold;
-font-size:16px;
-
-cursor:pointer;
+.btn{
+display:block;
+width:100%;
+padding:18px;
+border-radius:14px;
+background:#1e4f7a;
+text-align:center;
+font-size:18px;
+font-weight:700;
+text-decoration:none;
+color:white;
 transition:0.2s;
 }
 
-.card:hover,
-.full-card:hover,
-.small-card:hover{
-transform:translateY(-3px);
+.btn:hover{
+transform:scale(1.03);
+background:#266aa5;
 }
 
-/* full */
-
-.full-card{
-margin-top:12px;
+.full{
+margin-bottom:15px;
 }
 
-/* small */
-
-.small-card{
-margin-top:12px;
-}
-
-/* popup */
+/* POPUP */
 
 .popup{
-display:none;
-position:fixed;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-background:#0e2b4a;
-padding:20px;
-width:85%;
-max-width:400px;
-border-radius:12px;
-z-index:10;
-}
-
-.popup button{
-margin-top:10px;
-padding:10px;
-border:none;
-background:#1f6fb5;
-border-radius:6px;
-cursor:pointer;
-color:white;
-}
-
-.overlay{
-display:none;
 position:fixed;
 top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.6);
-z-index:5;
+background:rgba(0,0,0,0.8);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:99;
+}
+
+.popup-box{
+background:#1e4f7a;
+padding:25px;
+border-radius:12px;
+width:90%;
+max-width:400px;
+}
+
+.popup-box h3{
+margin-bottom:15px;
+}
+
+.popup-box textarea,
+.popup-box input{
+width:100%;
+margin-bottom:10px;
+padding:10px;
+border-radius:6px;
+border:none;
+}
+
+.popup-box button{
+width:100%;
+padding:12px;
+border:none;
+background:#0fa4ff;
+color:white;
+border-radius:6px;
+font-weight:bold;
 }
 
 </style>
-</head>
 
+</head>
 <body>
 
-<div class="banner">
 
-<img src="https://res.cloudinary.com/dtdodhqqi/image/upload/v1766772767/IMG-20251128-WA0091_ldbe9l.jpg">
+<!-- BANNER -->
+
+<div class="banner">
+<img src="https://res.cloudinary.com/dtdodhqqi/image/upload/v1773940535/b1046ff4b891d9b46cb07bfa9f897558_jsvldr.jpg">
+</div>
 
 <div class="fade"></div>
 
-<div class="logo">
-<img src="https://res.cloudinary.com/dtdodhqqi/image/upload/v1766845910/IMG-20251128-WA0094_1_rrrhdn.jpg">
+
+<!-- PROFILE -->
+
+<div class="profile">
+
+<img src="https://res.cloudinary.com/dtdodhqqi/image/upload/v1773940535/b1046ff4b891d9b46cb07bfa9f897558_jsvldr.jpg">
+
+<div class="title">
+AryanzUtama
 </div>
-
-</div>
-
-<div class="container">
-
-<div class="name">AryanzUtama</div>
 
 <div class="social">
-
-<a href="https://www.instagram.com/aryanz_stok?igsh=MW80bzZpOHRtcjBmbA==" target="_blank">
-<img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg">
-</a>
-
-<a href="https://wa.me/6289509506039" target="_blank">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
-</a>
-
-</div>
-
-<div class="grid">
-
-<div class="card" onclick="openPopup()">Jual Akun FF</div>
-<div class="card" onclick="openPopup()">Jual Akun ML</div>
-
-<div class="card" onclick="openPopup()">Jasa Amanin Akun FF</div>
-<div class="card" onclick="openPopup()">Jasa Amanin Akun ML</div>
-
-</div>
-
-<div class="full-card" onclick="openPopup()">
-Jasa Posting (JP)
-</div>
-
-<div class="full-card" onclick="openPopup()">
-Semua Grup / Saluran AryanzUtama
-</div>
-
-<div class="small-card" onclick="openPopup()">
-Kritik & Saran
+<a href="#">📷</a>
+<a href="#">💬</a>
 </div>
 
 </div>
 
-<div class="overlay" id="overlay" onclick="closePopup()"></div>
+
+<!-- MENU -->
+
+<div class="menu">
+
+<div class="row">
+<a href="#" class="btn">Jual Akun FF</a>
+<a href="#" class="btn">Jual Akun ML</a>
+</div>
+
+<div class="row">
+<a href="#" class="btn">Jasa Amanin Akun FF</a>
+<a href="#" class="btn">Jasa Amanin Akun ML</a>
+</div>
+
+<a href="#" class="btn full" onclick="openPopup()">Jasa Posting (JP)</a>
+
+<a href="#" class="btn full">Semua Grup / Saluran AryanzUtama</a>
+
+<a href="#" class="btn full">Kritik & Saran</a>
+
+</div>
+
+
+<!-- POPUP JP -->
 
 <div class="popup" id="popup">
 
-<h3>Layanan</h3>
-<p>Isi popup sesuai layanan nanti.</p>
+<div class="popup-box">
 
-<button onclick="closePopup()">Tutup</button>
+<h3>Kirim Format JP</h3>
+
+<textarea placeholder="Tulis format JP..."></textarea>
+
+<input type="file">
+
+<button>Kirim</button>
 
 </div>
+
+</div>
+
 
 <script>
 
 function openPopup(){
-document.getElementById("popup").style.display="block";
-document.getElementById("overlay").style.display="block";
+document.getElementById("popup").style.display="flex";
 }
 
-function closePopup(){
+window.onclick=function(e){
+if(e.target.id==="popup"){
 document.getElementById("popup").style.display="none";
-document.getElementById("overlay").style.display="none";
+}
 }
 
 </script>
